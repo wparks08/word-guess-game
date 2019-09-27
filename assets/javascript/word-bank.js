@@ -199,6 +199,4 @@ var wordBank = [
     "ghostwriter",
     "applaud",
     "administration",
-]
-
-export default wordBank;
+];
