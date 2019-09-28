@@ -1,64 +1,64 @@
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
 }
 
 .bg-container {
-    background-image: url(/assets/images/background.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
-    width: 100%;
+  background-image: url("../images/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
 }
 
 .centered {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 .side-panel {
-    height: 50px;
-    text-align: center;
-    font-size: 1.5rem;
+  height: 50px;
+  text-align: center;
+  font-size: 1.5rem;
 }
 
 .looney-card {
-    background-color: #cccccc;
-    border-radius: 3px;
-    border: 3px solid rgba(255,140,0,0.7);
-    box-shadow: 1px 1px 10px rgb(139,0,0);
+  background-color: #cccccc;
+  border-radius: 3px;
+  border: 3px solid rgba(255, 140, 0, 0.7);
+  box-shadow: 1px 1px 10px rgb(139, 0, 0);
 }
 
-
-
 .col-12.looney-card {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 .col-12.mb-fix {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 #img-title {
-    width: 100%;
+  width: 100%;
 }
 
 #game-body {
-    background-color: rgba(221, 221, 221, 0.8);
-    padding: 20px;
-    margin: 0 2px;
-    border-radius: 3px;
-    box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
-    position: relative;
+  background-color: rgba(221, 221, 221, 0.8);
+  padding: 20px;
+  margin: 0 2px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  position: relative;
 }
 
 #startPrompt {
-    min-height: 25%;
+  min-height: 25%;
 }
 
 #wordDisplay {
-    min-height: 75%;
+  min-height: 75%;
 }
 
-#wordDisplay, #lettersGuessed {
-    letter-spacing: .5rem;
+#wordDisplay,
+#lettersGuessed {
+  letter-spacing: 0.5rem;
 }
