@@ -6,27 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Word Guess Game</title>
 
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="jumbotron">
-            Word Guess Game
+    <div class="bg-container">
+        <div class="container pt-4">
+            <div class="jumbotron">
+                <h1 class="display-4 text-center">Word Guess Game</h1>
+        
+            </div>
+            <p class="lead">
+                <!--Start game prompt-->
+                <div id="startPrompt"></div>
+            </p>
+            <!--Wins display-->
+            <div id="wins"></div>
+            <!--Game display - word masked by underscores-->
+            <div id="wordDisplay"></div>
+            <!--Guesses remaining-->
+            <div id="remainingGuesses"></div>
+            <!--Letters guessed-->
+            <div id="lettersGuessed"></div>
         </div>
-        <!--Start game prompt-->
-        <div id="startPrompt"></div>
-        <!--Wins display-->
-        <div id="wins"></div>
-        <!--Game display - word masked by underscores-->
-        <div id="wordDisplay"></div>
-        <!--Guesses remaining-->
-        <div id="remainingGuesses"></div>
-        <!--Letters guessed-->
-        <div id="lettersGuessed"></div>
     </div>
+    
     
 
     <!--Main game js-->
