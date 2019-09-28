@@ -7,6 +7,12 @@ var game = {
     remainingGuesses: 0,
     hasStarted: false,
     hasFinished: false,
+    startMusicHasPlayed: false,
+    audio: {
+        start: new Audio("assets/sound/looney-tunes-opening-theme.mp3"),
+        correct: new Audio("assets/sound/correct-guess.mp3"),
+        lose: new Audio("assets/sound/lose.mp3")
+    },
 
     initialize: function() {
         this.word = wordBank[Math.floor(Math.random() * wordBank.length)];
@@ -16,8 +22,17 @@ var game = {
         this.hasStarted = false;
         this.hasFinished = false;
 
+        if (!this.startMusicHasPlayed) {
+            this.audio.start.play();
+            this.startMusicHasPlayed = true;
+        }
+
         for (let i = 0; i < this.word.length; i++) {
-            this.correctGuesses.push("_"); //initialize with underscores
+            if (this.word[i] === " ") {
+                this.correctGuesses.push(" ");
+            } else {
+                this.correctGuesses.push("_"); //initialize with underscores
+            }
         }
     },
 
@@ -37,7 +52,6 @@ var game = {
                 if (this.word[i] === userGuess) {
                     this.correctGuesses[i] = userGuess
                 }
-                // this.updateCorrectGuesses();
             }
         } else {
             this.incorrectGuesses.push(userGuess);
@@ -50,10 +64,15 @@ var game = {
     checkGameStatus: function() {
         let winner = !this.correctGuesses.includes("_");
         let loser = this.remainingGuesses == 0;
+
         if ( winner || loser ) {
             this.hasFinished = true;
             if (winner) {
+                this.audio.correct.play();
                 this.wins++;
+            } else {
+                this.audio.lose.play();
+                this.fillMissingLetters();
             }
         }
 
@@ -68,6 +87,14 @@ var game = {
         this.updateCorrectGuesses();
         this.updateRemainingGuesses();
         this.updateWins();
+    },
+
+    fillMissingLetters: function() {
+        for (let i = 0; i < this.word.length; i++) {
+            if (this.correctGuesses[i] === "_") {
+                this.correctGuesses[i] = '<span class="text-danger">' + this.word[i] + '</span>';
+            }
+        }
     },
 
     updateCorrectGuesses: function() {
@@ -97,7 +124,7 @@ var game = {
     stringifyArray: function(array) {
         let text = "";
         for (let i = 0; i < array.length; i++) {
-            text = text + array[i] + " ";
+            text = text + array[i];
         }
         return text;
     }

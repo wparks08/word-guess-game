@@ -6,12 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Word Guess Game</title>
 
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
     <link rel="stylesheet" type="text/css" href="assets/css/animate.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
   </head>
@@ -38,27 +33,27 @@
         <div class="row" id="game-body">
           <div class="col-md-9 text-center d-flex flex-column justify-content-center" id="game-panel">
             <!--Start game prompt-->
-            <div class="lead animated fadeIn" id="startPrompt"></div>
+            <div class="lead d-flex justify-content-center align-items-center animated fadeIn looney-card mb-2" id="startPrompt"></div>
             <!--Game display - word masked by underscores-->
-            <div class="h3 text-uppercase justify-content-center d-flex align-items-center" id="wordDisplay"></div>
+            <div class="h3 text-uppercase justify-content-center d-flex align-items-center looney-card text-wrap" id="wordDisplay"></div>
           </div>
           <div class="col-md-3">
             <div class="row">
-              <div class="col-12">
+              <div class="col-12 looney-card">
                 <p>Number of Wins:</p>
                 <!--Wins display-->
                 <div class="side-panel" id="wins"></div>
               </div>
             </div>
             <div class="row">
-              <div class="col-12">
+              <div class="col-12 looney-card">
                 <p>Remaining Guesses:</p>
                 <!--Guesses remaining-->
                 <div class="side-panel" id="remainingGuesses"></div>
               </div>
             </div>
             <div class="row">
-              <div class="col-12">
+              <div class="col-12 looney-card mb-fix">
                 <p>Letters Already Guessed:</p>
                 <!--Letters guessed-->
                 <div class="side-panel text-uppercase" id="lettersGuessed"></div>
@@ -70,25 +65,10 @@
     </div>
 
     <!--Main game js-->
-    <script
-      type="text/javascript"
-      src="assets/javascript/word-bank.js"
-    ></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/javascript/word-bank.js"></script>
     <script type="text/javascript" src="assets/javascript/game.js"></script>
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>

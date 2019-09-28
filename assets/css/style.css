@@ -21,6 +21,23 @@ html, body {
     font-size: 1.5rem;
 }
 
+.looney-card {
+    background-color: #cccccc;
+    border-radius: 3px;
+    border: 3px solid rgba(255,140,0,0.7);
+    box-shadow: 1px 1px 10px rgb(139,0,0);
+}
+
+
+
+.col-12.looney-card {
+    margin-bottom: 1em;
+}
+
+.col-12.mb-fix {
+    margin-bottom: 0;
+}
+
 #img-title {
     width: 100%;
 }
@@ -40,8 +57,8 @@ html, body {
 
 #wordDisplay {
     min-height: 75%;
-    background-color: #cccccc;
-    border-radius: 3px;
-    border: 3px solid rgba(255,140,0,0.7);
-    box-shadow: 1px 1px 10px rgb(139,0,0);
+}
+
+#wordDisplay, #lettersGuessed {
+    letter-spacing: .5rem;
 }
