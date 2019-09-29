@@ -15,6 +15,7 @@ var game = {
     },
 
     initialize: function() {
+        //return appropriate properties to initial values
         this.word = wordBank[Math.floor(Math.random() * wordBank.length)];
         this.correctGuesses = []
         this.incorrectGuesses = [];
@@ -22,6 +23,7 @@ var game = {
         this.hasStarted = false;
         this.hasFinished = false;
 
+        //Only playing start music on first round
         if (!this.startMusicHasPlayed) {
             this.audio.start.play();
             this.startMusicHasPlayed = true;
@@ -29,7 +31,7 @@ var game = {
 
         for (let i = 0; i < this.word.length; i++) {
             if (this.word[i] === " ") {
-                this.correctGuesses.push(" ");
+                this.correctGuesses.push(" "); //spaces where appropriate
             } else {
                 this.correctGuesses.push("_"); //initialize with underscores
             }
@@ -43,10 +45,12 @@ var game = {
     },
 
     processGuess: function(userGuess) {
+        //Gandalfing duplicate guesses
         if (this.correctGuesses.includes(userGuess) || this.incorrectGuesses.includes(userGuess) || this.hasFinished) {
-            return;
+            return; //shall not pass
         }
 
+        //Fill the guess into either correctGuesses or incorrectGuesses
         if (this.word.includes(userGuess)) {
             for (let i = 0; i < this.word.length; i++) {
                 if (this.word[i] === userGuess) {
@@ -62,6 +66,7 @@ var game = {
     },
 
     checkGameStatus: function() {
+        //If no underscores remain in correctGuesses, the game is won
         let winner = !this.correctGuesses.includes("_");
         let loser = this.remainingGuesses == 0;
 
@@ -82,6 +87,7 @@ var game = {
         }
     },
 
+    //all-in-one display update
     updateDisplay: function() {
         this.updateIncorrectGuesses();
         this.updateCorrectGuesses();
@@ -90,6 +96,7 @@ var game = {
     },
 
     fillMissingLetters: function() {
+        //Fills in any letter that weren't guessed, in red.
         for (let i = 0; i < this.word.length; i++) {
             if (this.correctGuesses[i] === "_") {
                 this.correctGuesses[i] = '<span class="text-danger">' + this.word[i] + '</span>';
@@ -121,6 +128,7 @@ var game = {
         document.getElementById("startPrompt").innerHTML = "";
     },
 
+    //Helper method for converting array -> string
     stringifyArray: function(array) {
         let text = "";
         for (let i = 0; i < array.length; i++) {

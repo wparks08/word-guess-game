@@ -1,3 +1,4 @@
+//Looney Tunes characters
 var wordBank = [
     "babbit and catstello",
     "barnyard dawg",
